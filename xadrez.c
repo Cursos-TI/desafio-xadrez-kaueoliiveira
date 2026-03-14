@@ -8,11 +8,12 @@ int main() {
     // Nível Novato - Movimentação das Peças
     int torre = 5;
     int bispo = 5;
-    int rainha = 8;
     int b = 1;
+    int rainha = 8;
     int r = 1;
+    int cavalo = 2;
     int opcao;
-    printf("\n1. Bispo\n2. Torre\n3. Rainha\nEscolha a peça para movimentar:");
+    printf("\n1. Bispo\n2. Torre\n3. Rainha\n4. Cavalo\nEscolha a peça para movimentar:");
     scanf("%d", &opcao);
     switch (opcao)
     {
@@ -42,13 +43,23 @@ int main() {
             r++;
         }
         break;
+// Implementação de Movimentação do Cavalo
+    case 4:
+        printf("Movimentando o Cavalo...\n");
+        // Nível Aventureiro - Movimentação do Cavalo
+    for ( int i = 1; i <= cavalo; i++){
+        printf("Baixo\n");
+        while (i == 2)
+        {
+            printf("Esquerda\n");
+            break;
+        }
+    }
+        break;
     default:
         printf("Opção inválida. Por favor, escolha uma peça válida.\n");
         break;
     }        
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
