@@ -3,7 +3,16 @@
 // Função para movimentar o Bispo
 void movimentarbispo(int bispo){
     if (bispo > 0){
-        printf("Cima,Direita\n");
+        for (int i = 0; i < 1 ; i++)
+        {
+            int j = 0;
+            printf("Cima\n");
+            while (j < 1)
+            {
+                printf("Direita\n");
+                j++;
+            }
+        }
         movimentarbispo(bispo - 1);
     }
 }
