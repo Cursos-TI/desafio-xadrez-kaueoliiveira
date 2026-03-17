@@ -1,4 +1,51 @@
 #include <stdio.h>
+void movimentarbispo(int bispo){
+    printf("Movimentando o Bispo...\n");
+    for (int i = 0; i < bispo ; i++)
+    {
+      printf("Cima\n");
+      int j = 0;
+      while (j < 1)
+      {
+        printf("Direita\n");
+        j++;
+      }   
+    }
+    }
+
+void movimentarcavalo(int cavalo){
+    printf("Movimentando o Cavalo...\n");
+
+    for (int i = 1; i <= cavalo; i++)
+    {
+
+        for (int j = 1; j <= 2; j++)
+        {
+            printf("Cima\n");
+
+            if (j == 1)
+                continue;
+        }
+
+        printf("Direita\n");
+
+        break;
+    }
+}
+void movimentarrainha(int r,int rainha){
+    printf("Movimentando a Rainha...\n");
+    if (rainha > 0){
+    printf("Esquerda\n");
+    movimentarrainha(r, rainha - 1);
+  }
+}
+void movimentartorre(int torre){
+     printf("Movimentando a Torre...\n");
+    if (torre > 0){
+    printf("Direita\n");
+    movimentartorre(torre - 1);
+  }
+}
 
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
@@ -19,42 +66,19 @@ int main() {
     {
 // Implementação de Movimentação do Bispo
     case 1:
-        printf("Movimentando o Bispo...\n");
-        do
-        {
-            printf("Cima,Direita\n");
-            b++;
-        } while (b <= bispo);
+        movimentarbispo(bispo);
         break;
 // Implementação de Movimentação da Torre
     case 2:
-        printf("Movimentando a Torre...\n");
-        for (int i = 0; i < torre; i++)
-     {
-        printf("Direita\n");
-     }
+        movimentartorre(torre);
         break;
 // Implementação de Movimentação da Rainha
     case 3:
-        printf("Movimentando a Rainha...\n");
-        while (r <= rainha)
-        {
-            printf("Esquerda\n");
-            r++;
-        }
+       movimentarrainha(r, rainha);
         break;
 // Implementação de Movimentação do Cavalo
     case 4:
-        printf("Movimentando o Cavalo...\n");
-        // Nível Aventureiro - Movimentação do Cavalo
-    for ( int i = 1; i <= cavalo; i++){
-        printf("Baixo\n");
-        while (i == 2)
-        {
-            printf("Esquerda\n");
-            break;
-        }
-    }
+        movimentarcavalo(cavalo);
         break;
     default:
         printf("Opção inválida. Por favor, escolha uma peça válida.\n");
