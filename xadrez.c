@@ -1,21 +1,14 @@
 #include <stdio.h>
+        //funçoes para movimentação das peças
+// Função para movimentar o Bispo
 void movimentarbispo(int bispo){
-    printf("Movimentando o Bispo...\n");
-    for (int i = 0; i < bispo ; i++)
-    {
-      printf("Cima\n");
-      int j = 0;
-      while (j < 1)
-      {
-        printf("Direita\n");
-        j++;
-      }   
+    if (bispo > 0){
+        printf("Cima,Direita\n");
+        movimentarbispo(bispo - 1);
     }
-    }
-
+}
+// Função para movimentar o Cavalo
 void movimentarcavalo(int cavalo){
-    printf("Movimentando o Cavalo...\n");
-
     for (int i = 1; i <= cavalo; i++)
     {
 
@@ -32,18 +25,18 @@ void movimentarcavalo(int cavalo){
         break;
     }
 }
-void movimentarrainha(int r,int rainha){
-    printf("Movimentando a Rainha...\n");
+// Função para movimentar a Rainha
+void movimentarrainha(int rainha){
     if (rainha > 0){
-    printf("Esquerda\n");
-    movimentarrainha(r, rainha - 1);
+        printf("Esquerda\n");
+        movimentarrainha(rainha - 1);
   }
 }
+// Função para movimentar a Torre
 void movimentartorre(int torre){
-     printf("Movimentando a Torre...\n");
     if (torre > 0){
-    printf("Direita\n");
-    movimentartorre(torre - 1);
+        printf("Direita\n");
+        movimentartorre(torre - 1);
   }
 }
 
@@ -66,18 +59,22 @@ int main() {
     {
 // Implementação de Movimentação do Bispo
     case 1:
+        printf("Movimentando o Bispo...\n");
         movimentarbispo(bispo);
         break;
 // Implementação de Movimentação da Torre
     case 2:
+        printf("Movimentando a Torre...\n");
         movimentartorre(torre);
         break;
 // Implementação de Movimentação da Rainha
     case 3:
-       movimentarrainha(r, rainha);
+        printf("Movimentando a Rainha...\n");
+       movimentarrainha(rainha);
         break;
 // Implementação de Movimentação do Cavalo
     case 4:
+        printf("Movimentando o Cavalo...\n");
         movimentarcavalo(cavalo);
         break;
     default:
